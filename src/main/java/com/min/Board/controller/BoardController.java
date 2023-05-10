@@ -33,6 +33,7 @@ public class BoardController {
         return hello;
     }
 
+    /* API */
     static class Hello {
         /* 프로퍼티 접근 방식 */ 
         /* 자바 빈 표준방식 게터 세터 */
