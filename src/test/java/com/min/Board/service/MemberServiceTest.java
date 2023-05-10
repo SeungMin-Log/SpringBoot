@@ -3,18 +3,20 @@ package com.min.Board.service;
 import com.min.Board.domain.Member;
 import com.min.Board.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+    private final MemberService memberService;
+
     MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    MemberServiceTest(MemberService memberService) {
+        this.memberService = memberService;
+    }
 
     @AfterEach
     public void afterEach() {
